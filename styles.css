@@ -103,7 +103,7 @@ a{color:inherit}
 .invite{padding:0 clamp(14px,4vw,28px) 4rem;overflow:hidden;background:#e4ead0}
 .invite__bg{position:absolute;inset:0;background:
   linear-gradient(to bottom,#f7dfc6 0,rgba(247,223,198,0) 20%,rgba(246,236,216,0) 80%,var(--paper) 100%),
-  url("assets/svg/aisle.svg") center 35%/cover no-repeat,url("assets/svg/palace.svg") center top/130% auto no-repeat,#e4ead0}
+  url("assets/svg/mandir-path.svg") center 70%/cover no-repeat,url("assets/svg/mandir.svg") center 70%/cover no-repeat,#e4ead0}
 .card-oval{
   position:relative;max-width:var(--maxw);margin:0 auto;padding:3.4rem clamp(22px,7vw,40px) 2.8rem;text-align:center;
   background:
@@ -360,3 +360,44 @@ a{color:inherit}
 .invite__msg .hi{font-size:.92rem;line-height:1.85}
 .invite__msg-head{color:var(--maroon)!important;font-weight:600;margin-top:.9rem!important}
 .signature__credit{font-family:var(--sans);font-weight:500;letter-spacing:.28em;font-size:.78rem;color:var(--gold-3);margin:.6rem 0 .2rem}
+
+/* hearts: keep every line inside the heart outline (fixes the clipped "28 · JAN 2027") */
+.heart__body{padding:9% 17% 30%;place-content:center;gap:0}
+.heart__body small{display:block;max-width:100%;font-size:clamp(.44rem,1.75vw,.58rem);letter-spacing:.05em;line-height:1.15}
+.heart__body small i{display:block;font-style:normal;letter-spacing:0;font-size:1.05em;margin-top:.1em}
+.heart__body b{font-size:clamp(1.5rem,7.4vw,2.6rem);margin:.06em 0 .02em}
+.heart__body span{font-size:clamp(.5rem,2.1vw,.68rem);letter-spacing:.16em;line-height:1.2}
+.heart__body em{font-style:normal;font-family:var(--sans);font-size:clamp(.42rem,1.7vw,.56rem);letter-spacing:.14em;color:var(--gold-3);line-height:1.2}
+.heart--main{transform:scale(1.04)}
+.hearts{padding:0 2px}
+.heart{margin-bottom:2.6em}
+.heart__body{padding:4% 18% 20%}
+.heart__body small{position:absolute;top:100%;left:-6%;right:-6%;margin-top:.7em;font-size:clamp(.52rem,2.2vw,.66rem);color:var(--maroon);letter-spacing:.06em}
+.heart__body small i{color:var(--gold-3)}
+.heart__body b{font-size:clamp(1.7rem,8.4vw,2.9rem)}
+.heart__body span{font-size:clamp(.56rem,2.4vw,.74rem)}
+.heart__body em{font-size:clamp(.48rem,2vw,.62rem)}
+
+/* ---------- Opening scene: reel-style mandir, path, peacocks & couple ---------- */
+.hero__palace,.hero__aisle{left:50%;top:auto;bottom:0;width:100%;height:80%;object-fit:cover;object-position:50% 100%;
+  transform:translateX(-50%);transform-origin:50% 100%;-webkit-mask-image:none;mask-image:none}
+.hero__lawn{display:none}
+@media (min-width:700px){
+  .hero__palace,.hero__aisle{width:100%;height:86%;object-fit:contain}
+  .hero__lawn{display:block;position:absolute;left:0;right:0;bottom:0;height:23%;
+    background:linear-gradient(#9fb36d,#6e8f4a)}
+}
+@media (max-width:699px){ .hero__line{display:none} }
+.hero__line{display:none}
+@media (min-width:700px){
+  .hero__palace,.hero__aisle{height:72%}
+  .hero__lawn{height:19%}
+}
+/* creator credit — clearly visible */
+.signature__label{font-size:.8rem;letter-spacing:.24em;color:var(--maroon);font-weight:500}
+.signature__name{font-family:var(--serif);font-weight:600;letter-spacing:.12em;font-size:clamp(2rem,9vw,3.6rem);line-height:1.15;margin:.5rem 0 .1rem;
+  background:linear-gradient(100deg,#7a1e2b 0%,#a37d2c 35%,#d9a752 50%,#a37d2c 65%,#7a1e2b 100%);background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;filter:none}
+.signature__hindi{font-size:1.15rem;color:var(--maroon)}
+.no-gsap .signature .signature__name,.signature .signature__name{opacity:1!important;transform:none!important;visibility:visible!important}
+.signature__name{font-size:clamp(1.55rem,7.2vw,3.4rem);letter-spacing:.08em;white-space:nowrap}

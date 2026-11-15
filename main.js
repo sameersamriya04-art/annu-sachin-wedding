@@ -167,7 +167,6 @@
     gsap.from('.cd', { scrollTrigger: { trigger: '#countdown', start: 'top 85%' }, scale: 0.6, autoAlpha: 0, stagger: 0.1, duration: 0.8, ease: 'back.out(1.6)' });
 
     /* SIGNATURE */
-    gsap.from('.signature__name', { scrollTrigger: { trigger: '#signature', start: 'top 85%' }, scale: 0.8, autoAlpha: 0, duration: 1.4, ease: 'power3.out' });
 
     // Recalculate once fonts/images settle
     window.addEventListener('load', () => ScrollTrigger.refresh());
@@ -178,7 +177,7 @@
   function initFallbackMotion() {
     document.documentElement.classList.add('no-gsap');
     // reveal-on-enter
-    const targets = $$('[data-card],[data-heart],[data-portrait],[data-event],[data-fade],[data-reveal],.cd,.tag,.signature__name,.portraits__amp');
+    const targets = $$('[data-card],[data-heart],[data-portrait],[data-event],[data-fade],[data-reveal],.cd,.tag,.portraits__amp');
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver(entries => {
         entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
