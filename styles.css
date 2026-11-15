@@ -353,3 +353,10 @@ a{color:inherit}
 .no-gsap .heart--main.is-in{transform:scale(1.08)}
 .no-gsap .is-in{opacity:1;transform:none}
 .no-gsap .hero__text,.no-gsap .hero__garland{transition:none}
+
+/* supplied bilingual invitation message */
+.invite__msg{margin:.6rem auto 1rem;max-width:34ch}
+.invite__msg p{font-size:.98rem;line-height:1.65;margin:.35rem 0;color:var(--ink-soft)}
+.invite__msg .hi{font-size:.92rem;line-height:1.85}
+.invite__msg-head{color:var(--maroon)!important;font-weight:600;margin-top:.9rem!important}
+.signature__credit{font-family:var(--sans);font-weight:500;letter-spacing:.28em;font-size:.78rem;color:var(--gold-3);margin:.6rem 0 .2rem}

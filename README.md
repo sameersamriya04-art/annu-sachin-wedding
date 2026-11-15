@@ -23,7 +23,7 @@ No build step. Pure HTML / CSS / JS. GSAP 3.12.5 + ScrollTrigger are loaded from
 
 ## 1 · Before publishing (2 small things)
 
-1. **Music** — add a licensed / royalty-free traditional Indian instrumental as
+1. **Music** — an original instrumental is already included at `assets/audio/music.mp3`. To use a different track, replace it with a licensed one as
    `assets/audio/music.mp3` (≈ 2–4 MB, 128 kbps is plenty). Until it exists the music button
    shows a "music not added yet" message instead of pretending to play.
    Free, licensed sources: Pixabay Music, Free Music Archive, YouTube Audio Library
