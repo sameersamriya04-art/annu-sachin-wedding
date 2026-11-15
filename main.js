@@ -126,7 +126,6 @@
       scrollTrigger: { trigger: '.hearts', start: 'top 80%' },
       scale: 0.2, autoAlpha: 0, rotation: -8, transformOrigin: '50% 60%', stagger: 0.18, duration: 1.1, ease: 'elastic.out(1, 0.55)'
     });
-    gsap.from('.heart--main', { scrollTrigger: { trigger: '.hearts', start: 'top 80%' }, scale: 0.9, delay: 1.2, duration: 1.6, ease: 'elastic.out(1,0.4)' });
 
     /* PORTRAITS — cinematic clip reveal + shine */
     $$('[data-portrait]').forEach((fig, i) => {

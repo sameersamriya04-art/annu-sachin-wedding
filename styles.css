@@ -401,3 +401,4 @@ a{color:inherit}
 .signature__hindi{font-size:1.15rem;color:var(--maroon)}
 .no-gsap .signature .signature__name,.signature .signature__name{opacity:1!important;transform:none!important;visibility:visible!important}
 .signature__name{font-size:clamp(1.55rem,7.2vw,3.4rem);letter-spacing:.08em;white-space:nowrap}
+.signature__name{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--maroon);animation:none;font-size:clamp(1.35rem,6.2vw,3.2rem)}
