@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Annu &amp; Sachin — Wedding Invitation | 28 January 2027</title>
+<meta name="description" content="With the blessings of our families, you are warmly invited to the wedding of Annu Samriya and Sachin Badgujar — 28 January 2027, Sri Vijaynagar, Sri Ganganagar. #AnnuWedsSachin">
+<meta name="theme-color" content="#f6ecd8">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Annu & Sachin — Wedding Invitation">
+<meta property="og:description" content="28 January 2027 · Satyanarayan Dharamshala, Sri Vijaynagar · #AnnuWedsSachin">
+<meta property="og:image" content="https://sameersamriya04-art.github.io/annu-sachin-wedding/assets/img/og-image.jpg">
+<link rel="icon" href="assets/svg/ganesh.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="assets/svg/palace.svg">
+<link rel="preload" as="image" href="assets/svg/aisle.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Jost:wght@300;400;500&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <img src="assets/svg/ganesh.svg" alt="" width="64" height="64">
+  <p class="loader__text">अन्नू <span>&amp;</span> सचिन</p>
+</div>
+
+<!-- Floating controls -->
+<nav class="float-controls" aria-label="Invitation controls">
+  <button class="fab" id="musicBtn" type="button" aria-pressed="false" aria-label="Play background music" title="Play music">
+    <svg viewBox="0 0 24 24" class="icon-play" aria-hidden="true"><path d="M9 7v10l8-5z" fill="currentColor"/></svg>
+    <svg viewBox="0 0 24 24" class="icon-pause" aria-hidden="true"><path d="M8 7h3v10H8zM13 7h3v10h-3z" fill="currentColor"/></svg>
+    <span class="fab__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+  </button>
+  <button class="fab" id="shareBtn" type="button" aria-label="Share this invitation" title="Share">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-7-3.5a3 3 0 0 0 0-1.4l7-3.5A3 3 0 1 0 15 7a3 3 0 0 0 .1.7l-7 3.5a3 3 0 1 0 0 3.6l7 3.5A3 3 0 1 0 18 16z" fill="currentColor"/></svg>
+  </button>
+</nav>
+<audio id="bgMusic" loop preload="none" src="assets/audio/music.mp3"></audio>
+
+<main id="invitation">
+
+<!-- ============ SECTION 1 · OPENING SCENE ============ -->
+<section class="scene hero" id="hero" aria-label="Opening scene">
+  <div class="hero__pin">
+    <img class="hero__sky layer" src="assets/svg/sky.svg" alt="" aria-hidden="true" data-depth="0.15">
+    <img class="hero__palace layer" src="assets/svg/palace.svg" alt="Illustrated royal palace entrance" data-depth="0.35">
+    <img class="hero__aisle layer" src="assets/svg/aisle.svg" alt="Floral pathway with peacocks leading to the palace, bride and groom walking together" data-depth="0.6">
+    <img class="hero__garland" src="assets/svg/garland.svg" alt="" aria-hidden="true">
+    <div class="petals" id="petals" aria-hidden="true"></div>
+
+    <div class="hero__text">
+      <p class="eyebrow hi">॥ श्री गणेशाय नमः ॥</p>
+      <h1 class="hero__names">
+        <span class="script" data-reveal>Annu</span>
+        <span class="amp">&amp;</span>
+        <span class="script" data-reveal>Sachin</span>
+      </h1>
+      <p class="hero__hindi hi">अन्नू <span class="amp-hi">एवं</span> सचिन</p>
+      <p class="hero__date">28 · January · 2027</p>
+      <p class="hero__line">Together with their families, invite you to celebrate</p>
+      <p class="hero__line hi">अपने परिवारों सहित आपको सादर आमंत्रित करते हैं</p>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll to open</span>
+      <i></i>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2 · FORMAL INVITATION ============ -->
+<section class="scene invite" id="invite" aria-labelledby="invite-title">
+  <div class="invite__bg" aria-hidden="true"></div>
+  <article class="card-oval" data-card>
+    <img class="ganesh" src="assets/svg/ganesh.svg" alt="Lord Ganesha" width="72" height="72">
+    <p class="shloka hi">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥</p>
+    <h2 class="sr-only" id="invite-title">Formal wedding invitation</h2>
+    <p class="label">शुभ विवाह · Wedding Invitation</p>
+
+    <div class="family">
+      <p class="family__names">Smt. Seema Devi &amp; <span class="late">Late Shri Karan Samriya</span></p>
+      <p class="family__names hi">श्रीमती सीमा देवी एवं स्व. श्री करण समरिया</p>
+      <p class="family__note">with joy and the blessings of our elders, invite you to the wedding of their beloved daughter</p>
+      <p class="family__note hi">बड़ों के आशीर्वाद एवं हर्षोल्लास के साथ अपनी प्रिय सुपुत्री के शुभ विवाह पर आपको सादर आमंत्रित करते हैं</p>
+    </div>
+
+    <p class="couple-script"><span class="script">Annu</span><span class="hi couple-script__hi">अन्नू समरिया</span></p>
+    <p class="with">with · संग</p>
+    <p class="couple-script"><span class="script">Sachin</span><span class="hi couple-script__hi">सचिन बडगुजर</span></p>
+
+    <div class="family">
+      <p class="family__note">beloved son of</p>
+      <p class="family__names">Smt. Prem Devi &amp; Shri Nagar Badgujar</p>
+      <p class="family__names hi">श्रीमती प्रेम देवी एवं श्री नागर बडगुजर के सुपुत्र</p>
+    </div>
+
+    <p class="together">Together with their families</p>
+    <p class="together hi">अपने परिवारों सहित</p>
+    <p class="invite__date">Thursday, 28 January 2027</p>
+    <p class="invite__date hi">गुरुवार, 28 जनवरी 2027</p>
+  </article>
+</section>
+
+<!-- ============ TRANSITION · GARDEN STAIRCASE ============ -->
+<section class="scene garden" id="garden" aria-hidden="true">
+  <div class="garden__pin">
+    <img class="garden__img layer" src="assets/svg/garden.svg" alt="" data-depth="0.25">
+    <div class="garden__fade"></div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3 · DATES ============ -->
+<section class="scene paper dates" id="dates" aria-labelledby="dates-title">
+  <p class="eyebrow">A date to remember · <span class="hi">शुभ तिथियाँ</span></p>
+  <h2 class="sr-only" id="dates-title">Wedding dates</h2>
+  <div class="hearts">
+    <div class="heart" data-heart>
+      <img src="assets/svg/heart.svg" alt="" aria-hidden="true">
+      <div class="heart__body"><small>Haldi · हल्दी</small><b>25</b><span>JAN</span></div>
+    </div>
+    <div class="heart" data-heart>
+      <img src="assets/svg/heart.svg" alt="" aria-hidden="true">
+      <div class="heart__body"><small>Mehndi &amp; Sangeet<br>मेहंदी</small><b>27</b><span>JAN</span></div>
+    </div>
+    <div class="heart heart--main" data-heart>
+      <img src="assets/svg/heart.svg" alt="" aria-hidden="true">
+      <div class="heart__body"><small>Wedding · विवाह</small><b>28</b><span>JAN 2027</span></div>
+    </div>
+  </div>
+  <p class="dates__copy" data-fade>Mark your calendars — our forever begins on this joyous day, and we would be honoured to have you by our side.</p>
+  <p class="dates__copy hi" data-fade>अपने कैलेंडर में यह तिथि अंकित कर लें — हमारा नया सफ़र इसी शुभ दिन से आरम्भ होता है, और आपकी उपस्थिति हमारे लिए सम्मान की बात होगी।</p>
+  <img class="divider" src="assets/svg/divider.svg" alt="" aria-hidden="true">
+</section>
+
+<!-- ============ SECTION 4 · BRIDE & GROOM ============ -->
+<section class="scene paper couple" id="couple" aria-labelledby="couple-title">
+  <h2 class="script-title" id="couple-title" data-reveal>Meet the<br>Bride &amp; Groom</h2>
+  <p class="eyebrow hi">दूल्हा एवं दुल्हन</p>
+
+  <div class="portraits">
+    <figure class="portrait" data-portrait>
+      <div class="portrait__frame">
+        <picture>
+          <source srcset="assets/img/annu-portrait.webp" type="image/webp">
+          <img src="assets/img/annu-portrait.jpg" alt="Annu Samriya, the bride" width="608" height="760" loading="lazy" decoding="async">
+        </picture>
+        <span class="portrait__shine" aria-hidden="true"></span>
+      </div>
+      <figcaption>
+        <span class="role">The Bride · दुल्हन</span>
+        <span class="script name">Annu</span>
+        <span class="fullname">Annu Samriya</span>
+        <span class="fullname hi">अन्नू समरिया</span>
+        <span class="parents">D/o Smt. Seema Devi &amp; Late Shri Karan Samriya</span>
+      </figcaption>
+    </figure>
+
+    <div class="portraits__amp" aria-hidden="true"><span class="script">&amp;</span></div>
+
+    <figure class="portrait" data-portrait>
+      <div class="portrait__frame">
+        <picture>
+          <source srcset="assets/img/sachin-portrait.webp" type="image/webp">
+          <img src="assets/img/sachin-portrait.jpg" alt="Sachin Badgujar, the groom" width="597" height="747" loading="lazy" decoding="async">
+        </picture>
+        <span class="portrait__shine" aria-hidden="true"></span>
+      </div>
+      <figcaption>
+        <span class="role">The Groom · दूल्हा</span>
+        <span class="script name">Sachin</span>
+        <span class="fullname">Sachin Badgujar</span>
+        <span class="fullname hi">सचिन बडगुजर</span>
+        <span class="parents">S/o Smt. Prem Devi &amp; Shri Nagar Badgujar</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ SECTION 5 · OUR STORY ============ -->
+<section class="scene paper story" id="story" aria-labelledby="story-title">
+  <div class="story__frame" data-fade>
+    <img class="story__arch" src="assets/svg/frame-arch.svg" alt="" aria-hidden="true">
+    <div class="story__text">
+      <h2 class="script-title" id="story-title">Our Story</h2>
+      <p class="eyebrow hi">हमारी कहानी</p>
+      <p data-fade>Some journeys are written by destiny, and some beginnings become the most beautiful chapters of life. As Annu and Sachin begin their journey together, two families come together to celebrate love, trust, companionship and a lifetime of beautiful memories.</p>
+      <p class="hi" data-fade>कुछ सफ़र नियति द्वारा लिखे जाते हैं, और कुछ शुरुआतें जीवन के सबसे सुंदर अध्याय बन जाती हैं। जैसे ही अन्नू और सचिन अपने जीवन की नई यात्रा आरम्भ कर रहे हैं, दो परिवार प्रेम, विश्वास, साथ और अनगिनत सुंदर स्मृतियों के उत्सव के लिए एक साथ आ रहे हैं।</p>
+      <p data-fade>With our hearts full and smiles wide, come celebrate our love, share our joy, and help make this day a beautiful memory we will cherish forever.</p>
+      <p class="hi" data-fade>हृदय में उल्लास और चेहरों पर मुस्कान लिए, आइए हमारे प्रेम के इस उत्सव में सम्मिलित हों और इस दिन को एक अविस्मरणीय स्मृति बनाएँ।</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 6 · CELEBRATIONS ============ -->
+<section class="scene paper events" id="events" aria-labelledby="events-title">
+  <h2 class="script-title" id="events-title" data-reveal>Wedding Celebrations</h2>
+  <p class="eyebrow hi">विवाह समारोह</p>
+
+  <div class="venue-key" data-fade>
+    <span class="key key--home">🏡 Family Home · निवास स्थान</span>
+    <span class="key key--hall">🏛 Satyanarayan Dharamshala · सत्यनारायण धर्मशाला</span>
+  </div>
+
+  <ol class="timeline">
+    <li class="event event--home" data-event>
+      <div class="event__icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M10 30h44l-6 20H16z" fill="#e8b23a"/><ellipse cx="32" cy="30" rx="22" ry="6" fill="#f6d36b"/><path d="M26 20c0-6 12-6 12 0s-12 8-12 0z" fill="#f2a93b"/></svg>
+      </div>
+      <div class="event__body">
+        <h3>Haldi <span class="hi">· हल्दी</span></h3>
+        <p class="event__when">Monday, 25 January 2027 · 3:00 PM</p>
+        <p class="event__when hi">सोमवार, 25 जनवरी 2027 · दोपहर 3:00 बजे</p>
+        <p class="event__where">Family Home · निवास स्थान</p>
+      </div>
+    </li>
+    <li class="event event--home" data-event>
+      <div class="event__icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M22 58V34l-8-14 6-2 8 10V12a4 4 0 0 1 8 0v14l2-16a4 4 0 0 1 8 0v18l4-10a3.5 3.5 0 0 1 6 2l-6 24-4 14z" fill="#f3c9a8" stroke="#7a1e2b" stroke-width="1.5"/><path d="M28 40c4-6 10-6 14 0M30 48c3-4 7-4 10 0" fill="none" stroke="#7a1e2b" stroke-width="1.5"/></svg>
+      </div>
+      <div class="event__body">
+        <h3>Mehndi &amp; Ladies Sangeet <span class="hi">· मेहंदी एवं महिला संगीत</span></h3>
+        <p class="event__when">Wednesday, 27 January 2027 · 10:00 AM</p>
+        <p class="event__when hi">बुधवार, 27 जनवरी 2027 · प्रातः 10:00 बजे</p>
+        <p class="event__where">Family Home · निवास स्थान</p>
+      </div>
+    </li>
+    <li class="event event--hall" data-event>
+      <div class="event__icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M14 44c0-10 8-18 18-18s18 8 18 18l-4 8H18z" fill="#c9a24a"/><path d="M22 26l10-14 10 14" fill="#7a1e2b"/><circle cx="32" cy="12" r="3" fill="#e8b23a"/><path d="M20 52h24v4H20z" fill="#7a1e2b"/><path d="M28 36h8v8h-8z" fill="#fff6e3"/></svg>
+      </div>
+      <div class="event__body">
+        <h3>Baraat <span class="hi">· बारात</span></h3>
+        <p class="event__when">Thursday, 28 January 2027 · 6:00 PM</p>
+        <p class="event__when hi">गुरुवार, 28 जनवरी 2027 · सायं 6:00 बजे</p>
+        <p class="event__where">Satyanarayan Dharamshala · सत्यनारायण धर्मशाला</p>
+      </div>
+    </li>
+    <li class="event event--hall" data-event>
+      <div class="event__icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M12 52V26l20-14 20 14v26z" fill="#f6ecd8" stroke="#c9a24a" stroke-width="2"/><path d="M26 52V38a6 6 0 0 1 12 0v14z" fill="#7a1e2b"/><path d="M14 26h36" stroke="#c9a24a" stroke-width="2"/><circle cx="32" cy="18" r="3" fill="#e37d99"/></svg>
+      </div>
+      <div class="event__body">
+        <h3>Wedding Ceremony &amp; Dinner <span class="hi">· विवाह समारोह एवं रात्रिभोज</span></h3>
+        <p class="event__when">Thursday, 28 January 2027 · 7:00 PM</p>
+        <p class="event__when hi">गुरुवार, 28 जनवरी 2027 · सायं 7:00 बजे</p>
+        <p class="event__where">Satyanarayan Dharamshala · सत्यनारायण धर्मशाला</p>
+      </div>
+    </li>
+    <li class="event event--hall" data-event>
+      <div class="event__icon" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><path d="M32 10c6 10 14 16 14 28a14 14 0 0 1-28 0c0-8 4-12 6-18 2 6 6 8 8 12 2-8 0-14 0-22z" fill="#e8601c"/><path d="M32 26c3 6 7 8 7 14a7 7 0 0 1-14 0c0-4 2-6 3-9 1 3 3 4 4 6 1-4 0-7 0-11z" fill="#f6d36b"/><path d="M16 56h32v3H16z" fill="#c9a24a"/></svg>
+      </div>
+      <div class="event__body">
+        <h3>Pheras <span class="hi">· फेरे</span></h3>
+        <p class="event__when">Thursday, 28 January 2027 · 11:00 PM</p>
+        <p class="event__when hi">गुरुवार, 28 जनवरी 2027 · रात्रि 11:00 बजे</p>
+        <p class="event__where">Satyanarayan Dharamshala · सत्यनारायण धर्मशाला</p>
+      </div>
+    </li>
+  </ol>
+  <img class="divider" src="assets/svg/divider.svg" alt="" aria-hidden="true">
+</section>
+
+<!-- ============ MANDAP + SECTION 7 · HASHTAG ============ -->
+<section class="scene paper hashtag" id="hashtag" aria-labelledby="hashtag-title">
+  <img class="mandap layer" src="assets/svg/mandap.svg" alt="Illustrated floral wedding mandap" data-depth="0.2" loading="lazy">
+  <h2 id="hashtag-title" class="serif-title" data-reveal>Our Hashtag</h2>
+  <p class="eyebrow hi">हमारा हैशटैग</p>
+  <button class="tag" id="copyTag" type="button" aria-label="Copy hashtag #AnnuWedsSachin">
+    <span>#AnnuWedsSachin</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h10a2 2 0 0 1 2 2v10h-2V6H8zM4 8h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2zm0 2v10h10V10z" fill="currentColor"/></svg>
+  </button>
+  <p class="tag__hint" id="tagHint">Tap to copy &amp; use it in all your posts · अपनी हर पोस्ट में इसे इस्तेमाल करें</p>
+  <div class="share-row">
+    <button class="btn btn--ghost" id="shareBtn2" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a3 3 0 0 0-2.4 1.2l-7-3.5a3 3 0 0 0 0-1.4l7-3.5A3 3 0 1 0 15 7a3 3 0 0 0 .1.7l-7 3.5a3 3 0 1 0 0 3.6l7 3.5A3 3 0 1 0 18 16z" fill="currentColor"/></svg>
+      Share invitation · आमंत्रण साझा करें
+    </button>
+  </div>
+</section>
+
+<!-- ============ SECTION 8 · RSVP ============ -->
+<section class="scene paper rsvp" id="rsvp" aria-labelledby="rsvp-title">
+  <h2 class="serif-title" id="rsvp-title" data-reveal>We look forward to welcoming you</h2>
+  <p class="eyebrow hi">आपके स्वागत की प्रतीक्षा में</p>
+
+  <form class="rsvp__panel" id="rsvpForm" novalidate data-fade>
+    <div class="field">
+      <label for="gName">Your name · आपका नाम</label>
+      <input id="gName" name="name" type="text" autocomplete="name" required placeholder="e.g. Priya Sharma">
+    </div>
+    <div class="field">
+      <label for="gPhone">Mobile number · मोबाइल नंबर</label>
+      <input id="gPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" required placeholder="10-digit number" pattern="[0-9+ ]{10,14}">
+    </div>
+
+    <fieldset class="field">
+      <legend>Will you be joining us? · क्या आप आ रहे हैं?</legend>
+      <div class="pills">
+        <label><input type="radio" name="attend" value="Attending" required><span>Attending · आ रहे हैं</span></label>
+        <label><input type="radio" name="attend" value="Not attending"><span>Not attending · नहीं आ पाएँगे</span></label>
+        <label><input type="radio" name="attend" value="Maybe"><span>Maybe · शायद</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="field">
+      <legend>Team Bride or Team Groom? · टीम दुल्हन या टीम दूल्हा?</legend>
+      <div class="pills pills--2">
+        <label><input type="radio" name="team" value="Team Bride (Annu)" required><span>👰 Team Annu</span></label>
+        <label><input type="radio" name="team" value="Team Groom (Sachin)"><span>🤵 Team Sachin</span></label>
+      </div>
+    </fieldset>
+
+    <div class="field">
+      <label for="gWish">A little note for us (optional) · शुभकामनाएँ</label>
+      <textarea id="gWish" name="wish" rows="3" placeholder="Share a wish, a memory, or just say hi!"></textarea>
+    </div>
+
+    <p class="form-error" id="formError" role="alert" hidden>Please fill in your name, mobile number, attendance and team.</p>
+
+    <button class="btn btn--primary" type="submit">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z" fill="currentColor"/></svg>
+      Send your wishes on WhatsApp
+    </button>
+    <p class="rsvp__note">Your reply opens in WhatsApp as a ready message to the family — nothing is stored on this website.<br><span class="hi">आपका उत्तर WhatsApp संदेश के रूप में परिवार तक पहुँचेगा।</span></p>
+  </form>
+
+  <div class="contacts" data-fade>
+    <a class="contact" href="tel:+917014463471">
+      <span class="contact__who">Mohit Samriya<small>Bride's family · वधू पक्ष</small></span>
+      <span class="contact__num">70144 63471</span>
+    </a>
+    <a class="contact" href="tel:+919588087033">
+      <span class="contact__who">Badgujar Family<small>Groom's family · वर पक्ष</small></span>
+      <span class="contact__num">95880 87033</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ SECTION 9 · VENUE ============ -->
+<section class="scene paper venue" id="venue" aria-labelledby="venue-title">
+  <img class="divider" src="assets/svg/divider.svg" alt="" aria-hidden="true">
+  <h2 class="serif-title" id="venue-title" data-reveal>Venue &amp; Directions</h2>
+  <p class="eyebrow hi">विवाह स्थल</p>
+
+  <div class="venue__card" data-fade>
+    <svg class="venue__illus" viewBox="0 0 320 150" aria-hidden="true">
+      <rect x="0" y="118" width="320" height="32" fill="#e8d3a6"/>
+      <rect x="50" y="60" width="220" height="60" fill="#f1e2c0" stroke="#b89755"/>
+      <path d="M90 60l20-30h100l20 30z" fill="#e8d3a6" stroke="#b89755"/>
+      <path d="M130 30q30-34 60 0z" fill="#e8d3a6" stroke="#b89755"/><line x1="160" y1="12" x2="160" y2="0" stroke="#a37d2c" stroke-width="2"/><path d="M160 0l14 4-14 5z" fill="#e8601c"/>
+      <path d="M140 120V88a20 20 0 0 1 40 0v32z" fill="#7a1e2b" stroke="#c9a24a" stroke-width="2"/>
+      <path d="M70 120V95a9 9 0 0 1 18 0v25zM232 120V95a9 9 0 0 1 18 0v25z" fill="#8b2b2b" stroke="#c9a24a"/>
+      <circle cx="22" cy="104" r="16" fill="#4f7a3e"/><rect x="20" y="104" width="4" height="16" fill="#7a5a2e"/>
+      <circle cx="298" cy="104" r="16" fill="#4f7a3e"/><rect x="296" y="104" width="4" height="16" fill="#7a5a2e"/>
+      <path d="M60 60h200" stroke="#c9a24a" stroke-width="3"/>
+      <g fill="#e37d99"><circle cx="58" cy="118" r="5"/><circle cx="262" cy="118" r="5"/><circle cx="108" cy="118" r="4"/><circle cx="212" cy="118" r="4"/></g>
+    </svg>
+    <h3>Satyanarayan Dharamshala</h3>
+    <p class="hi venue__hi">सत्यनारायण धर्मशाला</p>
+    <address>Sri Vijaynagar, Sri Ganganagar, Rajasthan, India<br><span class="hi">श्री विजयनगर, श्री गंगानगर, राजस्थान</span></address>
+    <p class="venue__which">Baraat · Wedding Ceremony &amp; Dinner · Pheras<br><span class="hi">बारात · विवाह समारोह एवं रात्रिभोज · फेरे</span></p>
+    <p class="venue__home">Haldi and Mehndi &amp; Ladies Sangeet are celebrated at the family home — please contact the family for the address.<br><span class="hi">हल्दी एवं मेहंदी-संगीत निवास स्थान पर होंगे — पते के लिए कृपया परिवार से संपर्क करें।</span></p>
+
+    <div class="venue__actions">
+      <a class="btn btn--primary" href="https://maps.app.goo.gl/Ah7Nt4VfwW95Mtj87" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
+        Get directions · रास्ता देखें
+      </a>
+      <button class="btn btn--ghost" id="calBtn" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3zm-1 7v11h12V9zm2 2h3v3H8z" fill="currentColor"/></svg>
+        Add to calendar · कैलेंडर में जोड़ें
+      </button>
+    </div>
+    <div class="cal-menu" id="calMenu" hidden>
+      <a id="gcalLink" href="#" target="_blank" rel="noopener">Google Calendar</a>
+      <a id="icsLink" href="#" download="Annu-Sachin-Wedding.ics">Apple / Outlook (.ics)</a>
+    </div>
+
+    <figure class="qr">
+      <img src="assets/svg/venue-qr.svg" alt="QR code for the venue location on Google Maps" width="150" height="150" loading="lazy">
+      <figcaption>Scan for the venue on Google Maps<br><span class="hi">मानचित्र के लिए स्कैन करें</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ SECTION 10 · FINAL ROYAL SCENE + COUNTDOWN ============ -->
+<section class="scene finale" id="finale" aria-labelledby="count-title">
+  <div class="finale__pin">
+    <img class="finale__lake layer" src="assets/svg/lake.svg" alt="Royal palace by a lotus lake with a decorated elephant" data-depth="0.3" loading="lazy">
+    <div class="finale__content">
+      <img class="divider divider--light" src="assets/svg/divider.svg" alt="" aria-hidden="true">
+      <h2 class="serif-title" id="count-title" data-reveal>Counting down to our big day</h2>
+      <p class="eyebrow hi">शुभ दिन की प्रतीक्षा</p>
+      <p class="finale__copy">Our families are delighted that you will join us for one of the happiest days of our lives.</p>
+      <p class="finale__copy hi">हमारे परिवार अत्यंत प्रसन्न हैं कि आप हमारे जीवन के इस सबसे सुखद दिन में हमारे साथ होंगे।</p>
+
+      <div class="countdown" id="countdown" role="timer" aria-live="polite" aria-label="Countdown to the wedding">
+        <div class="cd" data-unit="days"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36"/><circle cx="40" cy="40" r="36" class="cd__ring"/></svg><b>00</b><span>Days<i class="hi">दिन</i></span></div>
+        <div class="cd" data-unit="hours"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36"/><circle cx="40" cy="40" r="36" class="cd__ring"/></svg><b>00</b><span>Hours<i class="hi">घंटे</i></span></div>
+        <div class="cd" data-unit="minutes"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36"/><circle cx="40" cy="40" r="36" class="cd__ring"/></svg><b>00</b><span>Minutes<i class="hi">मिनट</i></span></div>
+        <div class="cd" data-unit="seconds"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="36"/><circle cx="40" cy="40" r="36" class="cd__ring"/></svg><b>00</b><span>Seconds<i class="hi">सेकंड</i></span></div>
+      </div>
+      <p class="countdown__done" id="countdownDone" hidden>आज शुभ विवाह है · It's the wedding day!</p>
+
+      <p class="finale__names"><span class="script">Annu</span> <span class="amp">&amp;</span> <span class="script">Sachin</span></p>
+      <p class="finale__tag">#AnnuWedsSachin · 28.01.2027</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 11 · CREATOR SIGNATURE ============ -->
+<footer class="signature" id="signature">
+  <img class="divider" src="assets/svg/divider.svg" alt="" aria-hidden="true">
+  <p class="signature__label">Website designed &amp; created by</p>
+  <p class="signature__name" data-reveal>Sameer Samriya</p>
+  <p class="signature__hindi hi">— समीर समरिया —</p>
+  <p class="signature__foot">Crafted with love for Annu &amp; Sachin · 2027</p>
+</footer>
+
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>
