@@ -343,9 +343,21 @@
     btn.addEventListener('click', () => { menu.hidden = !menu.hidden; btn.setAttribute('aria-expanded', String(!menu.hidden)); });
   }
 
+  /* ---------- 2c. red hearts flip open one by one (tap to flip back) ---------- */
+  function initHearts() {
+    const hearts = $$('[data-heart]'); if (!hearts.length || reduceMotion) return;
+    document.documentElement.classList.add('js-flip');
+    const open = () => hearts.forEach((h, i) => setTimeout(() => h.classList.add('is-open'), 900 + i * 650));
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { open(); io.disconnect(); } }, { threshold: 0.45 });
+      io.observe($('.hearts'));
+    } else open();
+    hearts.forEach(h => h.addEventListener('click', () => h.classList.toggle('is-open')));
+  }
+
   /* ---------- boot ---------- */
   function boot() {
-    initScroll(); initCountdown(); initRSVP(); initShare(); initMusic(); initCalendar();
+    initHearts(); initScroll(); initCountdown(); initRSVP(); initShare(); initMusic(); initCalendar();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
