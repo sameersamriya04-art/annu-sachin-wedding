@@ -37,9 +37,11 @@
   }
 
   /* ---------- 1. loader + petals ---------- */
-  function hideLoader() { const l = $('#loader'); if (l) l.classList.add('is-done'); }
-  window.addEventListener('load', () => setTimeout(hideLoader, 350));
-  setTimeout(hideLoader, 4000); // never trap the visitor on the loader
+  function hideLoader() { const l = $('#loader'); if (l) l.classList.add('is-done'); document.documentElement.classList.remove('gate-open'); }
+  function readyLoader() { const l = $('#loader'); if (l) l.classList.add('is-ready'); }
+  document.documentElement.classList.add('gate-open');
+  window.addEventListener('load', () => setTimeout(readyLoader, 300));
+  setTimeout(readyLoader, 3500); // show the Open button even if some asset is slow
 
   function makePetals() {
     if (reduceMotion) return;
@@ -310,14 +312,38 @@
       available = false; btn.classList.add('is-unavailable');
       btn.title = 'Music file not found — add assets/audio/music.mp3';
     });
-    btn.addEventListener('click', async () => {
+    let userPaused = false, pausedByHide = false;
+    audio.preload = 'auto';
+    audio.volume = 0.7;
+    const setUI = (on) => { btn.setAttribute('aria-pressed', String(on)); btn.setAttribute('aria-label', on ? 'Pause background music' : 'Play background music'); };
+    audio.addEventListener('play', () => setUI(true));
+    audio.addEventListener('pause', () => setUI(false));
+    const start = () => { if (!available || userPaused || !audio.paused) return Promise.resolve(); return audio.play().catch(() => {}); };
+
+    // a) try to autoplay as soon as the guest arrives (some browsers allow it)
+    start();
+    // b) the "Open Invitation" tap always starts it
+    const open = $('#openInvite');
+    if (open) open.addEventListener('click', () => { start(); hideLoader(); });
+    // c) otherwise the guest's first tap / key anywhere starts it
+    const EVTS = ['pointerup', 'touchend', 'click', 'keydown'];
+    const firstTouch = (e) => { if (e.target.closest && e.target.closest('#musicBtn')) return; start(); };
+    EVTS.forEach(ev => document.addEventListener(ev, firstTouch, true));
+    audio.addEventListener('playing', () => EVTS.forEach(ev => document.removeEventListener(ev, firstTouch, true)), { once: true });
+
+    btn.addEventListener('click', async (e) => {
+      e.stopPropagation();
       if (!available) { toast('Music not added yet (assets/audio/music.mp3)'); return; }
       if (audio.paused) {
-        try { await audio.play(); btn.setAttribute('aria-pressed', 'true'); btn.setAttribute('aria-label', 'Pause background music'); }
-        catch (e) { toast('Could not start music — tap again'); }
-      } else { audio.pause(); btn.setAttribute('aria-pressed', 'false'); btn.setAttribute('aria-label', 'Play background music'); }
+        userPaused = false;
+        try { await audio.play(); } catch (err) { toast('Could not start music — tap again'); }
+      } else { userPaused = true; audio.pause(); }
     });
-    document.addEventListener('visibilitychange', () => { if (document.hidden && !audio.paused) { audio.pause(); btn.setAttribute('aria-pressed', 'false'); } });
+    // pause while the tab is hidden, resume when the guest comes back
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { if (!audio.paused) { pausedByHide = true; audio.pause(); } }
+      else if (pausedByHide) { pausedByHide = false; start(); }
+    });
   }
 
   /* ---------- 7. calendar ---------- */
