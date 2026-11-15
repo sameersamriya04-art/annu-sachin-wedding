@@ -402,3 +402,6 @@ a{color:inherit}
 .no-gsap .signature .signature__name,.signature .signature__name{opacity:1!important;transform:none!important;visibility:visible!important}
 .signature__name{font-size:clamp(1.55rem,7.2vw,3.4rem);letter-spacing:.08em;white-space:nowrap}
 .signature__name{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--maroon);animation:none;font-size:clamp(1.35rem,6.2vw,3.2rem)}
+.garden__img{width:100%;height:120%;object-fit:cover;object-position:50% 40%}
+@media (max-width:699px){ .finale__lake{width:100%} }
+.finale__content::before{background:linear-gradient(to bottom,rgba(251,240,221,.97) 0,rgba(251,240,221,.9) 48%,rgba(251,240,221,0) 74%)}
