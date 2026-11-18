@@ -89,7 +89,7 @@
     /* HERO — pinned, scroll-scrubbed cinematic entrance */
     const hero = $('#hero');
     const heroTl = gsap.timeline({
-      scrollTrigger: { trigger: hero, start: 'top top', end: '+=140%', pin: '.hero__pin', scrub: 0.8, anticipatePin: 1 }
+      scrollTrigger: { trigger: hero, start: 'top top', end: '+=90%', pin: '.hero__pin', scrub: 0.8, anticipatePin: 1 }
     });
     heroTl
       .to('.hero__sky',     { yPercent: -6, scale: 1.08, ease: 'none' }, 0)
@@ -97,8 +97,7 @@
       .to('.hero__aisle',   { yPercent: 18, scale: 1.25, ease: 'none' }, 0)
       .to('.hero__garland', { yPercent: -110, ease: 'none' }, 0)
       .to('.hero__text',    { yPercent: -40, autoAlpha: 0, ease: 'none' }, 0.05)
-      .to('.scroll-cue',    { autoAlpha: 0 }, 0)
-      .to('.hero__pin',     { autoAlpha: 0, duration: 0.25 }, 0.75);
+      .to('.scroll-cue',    { autoAlpha: 0 }, 0);
 
     // intro (time-based, plays once on load)
     const intro = gsap.timeline({ delay: 0.3 });
