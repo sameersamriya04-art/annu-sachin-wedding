@@ -111,11 +111,13 @@
 
     /* INVITATION CARD — rises & unfolds over the pathway */
     gsap.from('[data-card]', {
-      scrollTrigger: { trigger: '#invite', start: 'top 85%', end: 'top 25%', scrub: 0.6 },
-      y: 140, scale: 0.86, autoAlpha: 0, ease: 'none'
+      scrollTrigger: { trigger: '#invite', start: 'top 90%', end: 'top 20%', scrub: 0.8 },
+      y: 180, rotationX: 62, z: -160, scale: 0.84, autoAlpha: 0, transformPerspective: 1400, transformOrigin: '50% 100%', ease: 'none'
     });
+    // gold light sweeping across the card as it settles
+    gsap.fromTo('.card-oval .sheen', { xPercent: -160 }, { scrollTrigger: { trigger: '[data-card]', start: 'top 65%', end: 'top 5%', scrub: 1 }, xPercent: 160, ease: 'none' });
     gsap.to('.invite__bg', { scrollTrigger: { trigger: '#invite', start: 'top bottom', end: 'bottom top', scrub: true }, backgroundPositionY: '30%', ease: 'none' });
-    gsap.from('.card-oval > *', { scrollTrigger: { trigger: '[data-card]', start: 'top 70%' }, y: 18, autoAlpha: 0, stagger: 0.06, duration: 0.9 });
+    gsap.from('.card-oval > *:not(.sheen)', { scrollTrigger: { trigger: '#invite', start: 'top 95%' }, y: 18, autoAlpha: 0, stagger: 0.05, duration: 0.8 });
 
     /* GARDEN — parallax staircase transition */
     gsap.fromTo('.garden__img', { yPercent: -8, scale: 1.15 }, {
@@ -124,13 +126,17 @@
 
     /* HEARTS — pop in one by one */
     gsap.from('[data-heart]', {
-      scrollTrigger: { trigger: '.hearts', start: 'top 80%' },
-      scale: 0.2, autoAlpha: 0, rotation: -8, transformOrigin: '50% 60%', stagger: 0.18, duration: 1.1, ease: 'elastic.out(1, 0.55)'
+      scrollTrigger: { trigger: '.hearts', start: 'top 82%' },
+      rotationY: -140, z: -220, y: 40, scale: 0.5, autoAlpha: 0, transformPerspective: 900, transformOrigin: '50% 60%',
+      stagger: 0.16, duration: 1.4, ease: 'back.out(1.4)'
     });
 
     /* PORTRAITS — cinematic clip reveal + shine */
     $$('[data-portrait]').forEach((fig, i) => {
       const frame = $('.portrait__frame', fig);
+      // turns in like the page of an album
+      gsap.fromTo(fig, { rotationY: i ? -38 : 38, z: -120, transformPerspective: 1100, transformOrigin: i ? '100% 50%' : '0% 50%' },
+        { scrollTrigger: { trigger: fig, start: 'top 95%', end: 'top 35%', scrub: 0.8 }, rotationY: 0, z: 0, ease: 'none' });
       const tl = gsap.timeline({ scrollTrigger: { trigger: fig, start: 'top 78%' } });
       tl.from(frame, { clipPath: 'inset(50% 0 50% 0 round 50%)', autoAlpha: 0, duration: 1.2, ease: 'power3.inOut' })
         .from($('img', frame), { scale: 1.3, duration: 1.6, ease: 'power2.out' }, 0)
@@ -140,11 +146,12 @@
     gsap.from('.portraits__amp', { scrollTrigger: { trigger: '.portraits__amp', start: 'top 85%' }, scale: 0, rotation: -30, duration: 1, ease: 'back.out(2)' });
 
     /* STORY frame draws in */
-    gsap.from('.story__arch', { scrollTrigger: { trigger: '#story', start: 'top 75%' }, scale: 0.92, autoAlpha: 0, transformOrigin: '50% 100%', duration: 1.2 });
+    gsap.from('.story__frame', { scrollTrigger: { trigger: '#story', start: 'top 95%', end: 'top 30%', scrub: 0.8 },
+      rotationX: 48, z: -140, y: 60, autoAlpha: 0.2, transformPerspective: 1300, transformOrigin: '50% 100%', ease: 'none' });
 
     /* EVENTS — slide in along the timeline */
     $$('[data-event]').forEach(ev => {
-      gsap.from(ev, { scrollTrigger: { trigger: ev, start: 'top 88%' }, x: -40, autoAlpha: 0, duration: 0.9 });
+      gsap.from(ev, { scrollTrigger: { trigger: ev, start: 'top 92%' }, rotationY: -75, x: -50, z: -80, autoAlpha: 0, transformPerspective: 900, transformOrigin: '0% 50%', duration: 1.1, ease: 'power3.out' });
       gsap.from($('.event__icon', ev), { scrollTrigger: { trigger: ev, start: 'top 88%' }, scale: 0, rotation: -90, duration: 0.9, ease: 'back.out(1.8)', delay: 0.15 });
     });
 
@@ -164,13 +171,97 @@
     /* FINALE — lake parallax, content rises, lotus bob */
     gsap.fromTo('.finale__lake', { yPercent: 10, scale: 1.12 }, { scrollTrigger: { trigger: '#finale', start: 'top bottom', end: 'bottom bottom', scrub: true }, yPercent: 0, scale: 1, ease: 'none' });
     gsap.from('.finale__content > *', { scrollTrigger: { trigger: '#finale', start: 'top 70%' }, y: 30, autoAlpha: 0, stagger: 0.1, duration: 1 });
-    gsap.from('.cd', { scrollTrigger: { trigger: '#countdown', start: 'top 85%' }, scale: 0.6, autoAlpha: 0, stagger: 0.1, duration: 0.8, ease: 'back.out(1.6)' });
+    gsap.from('.cd', { scrollTrigger: { trigger: '#countdown', start: 'top 88%' }, rotationX: -90, y: 30, autoAlpha: 0, transformPerspective: 600, stagger: 0.12, duration: 1, ease: 'back.out(1.6)' });
+    gsap.from('.mandap', { scrollTrigger: { trigger: '#hashtag', start: 'top 90%', end: 'top 30%', scrub: 0.8 }, rotationX: 35, transformPerspective: 1000, transformOrigin: '50% 100%', ease: 'none' });
+    gsap.from('.venue__card', { scrollTrigger: { trigger: '#venue', start: 'top 90%', end: 'top 35%', scrub: 0.8 }, rotationX: 30, z: -100, transformPerspective: 1200, transformOrigin: '50% 100%', ease: 'none' });
+    gsap.from('.rsvp__panel', { scrollTrigger: { trigger: '#rsvp', start: 'top 90%', end: 'top 30%', scrub: 0.8 }, rotationX: 28, z: -100, transformPerspective: 1200, transformOrigin: '50% 100%', ease: 'none' });
 
     /* SIGNATURE */
 
     // Recalculate once fonts/images settle
     window.addEventListener('load', () => ScrollTrigger.refresh());
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
+  }
+
+  (function () { const card = document.querySelector('.card-oval'); if (card) { const s = document.createElement('span'); s.className = 'sheen'; s.setAttribute('aria-hidden', 'true'); card.appendChild(s); } })();
+
+  /* ---------- 2a. ultra-premium layer: smooth scroll, 3D depth, tilt, flip digits ---------- */
+  function initPremium() {
+    if (reduceMotion || typeof gsap === 'undefined') return;
+    const html = document.documentElement;
+
+    // a) silky momentum scrolling (desktop wheel/trackpad; phones keep native touch scrolling)
+    if (window.Lenis && typeof ScrollTrigger !== 'undefined') {
+      const lenis = new Lenis({ duration: 1.25, smoothWheel: true, syncTouch: false, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(t => lenis.raf(t * 1000));
+      gsap.ticker.lagSmoothing(0);
+      if (html.classList.contains('gate-open')) lenis.stop();
+      new MutationObserver(() => { if (!html.classList.contains('gate-open')) lenis.start(); }).observe(html, { attributes: true, attributeFilter: ['class'] });
+      window.__lenis = lenis;
+    }
+
+    // b) 3D depth on the opening scene — layers drift apart with tilt / pointer, and breathe gently when idle
+    const layers = [['.hero__sky', 6, 4], ['.hero__palace', 16, 8], ['.hero__aisle', 30, 12], ['.hero__garland', -10, -4], ['.hero__text', -14, -6]]
+      .map(([s, dx, dy]) => { const el = $(s); return el && { x: gsap.quickTo(el, 'x', { duration: 1.2, ease: 'power3.out' }), y: gsap.quickTo(el, 'y', { duration: 1.2, ease: 'power3.out' }), dx, dy }; })
+      .filter(Boolean);
+    let tx = 0, ty = 0, lastInput = 0;
+    const apply = () => layers.forEach(l => { l.x(tx * l.dx); l.y(ty * l.dy); });
+    window.addEventListener('pointermove', e => { if (e.pointerType !== 'mouse') return; tx = (e.clientX / innerWidth - .5) * 2; ty = (e.clientY / innerHeight - .5) * 2; lastInput = Date.now(); apply(); }, { passive: true });
+    const onTilt = e => { if (e.gamma == null) return; tx = Math.max(-1, Math.min(1, e.gamma / 25)); ty = Math.max(-1, Math.min(1, ((e.beta || 45) - 45) / 25)); lastInput = Date.now(); apply(); };
+    window.addEventListener('deviceorientation', onTilt, { passive: true });
+    const open = $('#openInvite');   // iPhone needs permission for motion — ask on the Open tap (a user gesture)
+    if (open && window.DeviceOrientationEvent && typeof DeviceOrientationEvent.requestPermission === 'function')
+      open.addEventListener('click', () => { DeviceOrientationEvent.requestPermission().catch(() => {}); });
+    gsap.ticker.add(() => {           // idle "breathing" so the scene always feels alive
+      if (Date.now() - lastInput < 2500) return;
+      const t = performance.now() / 1000; tx = Math.sin(t * 0.35) * 0.55; ty = Math.cos(t * 0.27) * 0.4; apply();
+    });
+
+    // c) touch / mouse 3D tilt with a glare on the couple photos
+    $$('.portrait__frame').forEach(fr => {
+      const glare = document.createElement('span'); glare.className = 'glare'; fr.appendChild(glare);
+      const rx = gsap.quickTo(fr, 'rotationX', { duration: .6, ease: 'power3.out' }), ry = gsap.quickTo(fr, 'rotationY', { duration: .6, ease: 'power3.out' });
+      gsap.set(fr, { transformPerspective: 800 });
+      const move = e => { const r = fr.getBoundingClientRect(); const px = (e.clientX - r.left) / r.width - .5, py = (e.clientY - r.top) / r.height - .5;
+        rx(-py * 16); ry(px * 18); glare.style.background = `radial-gradient(circle at ${(px + .5) * 100}% ${(py + .5) * 100}%,rgba(255,250,235,.55),rgba(255,250,235,0) 55%)`; glare.style.opacity = 1; };
+      const leave = () => { rx(0); ry(0); glare.style.opacity = 0; };
+      fr.addEventListener('pointermove', move); fr.addEventListener('pointerdown', move); fr.addEventListener('pointerleave', leave); fr.addEventListener('pointerup', leave); fr.addEventListener('pointercancel', leave);
+    });
+
+    // d) countdown digits flip like a clock
+    $$('.cd b').forEach(b => new MutationObserver(() => gsap.fromTo(b, { rotationX: -95, transformPerspective: 300, transformOrigin: '50% 50%' }, { rotationX: 0, duration: .55, ease: 'back.out(2)' }))
+      .observe(b, { childList: true, characterData: true, subtree: true }));
+
+    // e) gold-foil shine on the script names
+    $$('.hero__names .script .w, .script-title .w, .couple-script .script, .portrait .name, .finale__names .script').forEach(el => el.classList.add('foil'));
+  }
+
+  /* ---------- 2c. floating gold sparkles (canvas, very light) ---------- */
+  function initSparkles() {
+    const c = $('#sparkles'); if (!c || reduceMotion) { if (c) c.remove(); return; }
+    const ctx = c.getContext('2d'); const dpr = Math.min(2, window.devicePixelRatio || 1);
+    let W = 0, H = 0; const N = window.innerWidth < 700 ? 26 : 44; const P = [];
+    const size = () => { W = c.width = innerWidth * dpr; H = c.height = innerHeight * dpr; };
+    size(); window.addEventListener('resize', size);
+    const spawn = (p, init) => { p.x = Math.random() * W; p.y = init ? Math.random() * H : H + 10 * dpr; p.r = (0.6 + Math.random() * 1.8) * dpr; p.vy = (0.12 + Math.random() * 0.35) * dpr; p.vx = (Math.random() - .5) * 0.15 * dpr; p.ph = Math.random() * 6.28; p.sp = 0.6 + Math.random() * 1.6; return p; };
+    for (let i = 0; i < N; i++) P.push(spawn({}, true));
+    let lastY = window.scrollY;
+    function frame(now) {
+      const dy = (window.scrollY - lastY) * dpr * 0.15; lastY = window.scrollY;
+      ctx.clearRect(0, 0, W, H);
+      for (const p of P) {
+        p.y -= p.vy + dy; p.x += p.vx + Math.sin(now / 1400 + p.ph) * 0.12 * dpr;
+        if (p.y < -12 * dpr || p.y > H + 14 * dpr) spawn(p, false);
+        const tw = 0.35 + 0.65 * Math.abs(Math.sin(now / 1000 * p.sp + p.ph));
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
+        g.addColorStop(0, `rgba(255,236,170,${0.9 * tw})`); g.addColorStop(0.35, `rgba(230,190,90,${0.45 * tw})`); g.addColorStop(1, 'rgba(230,190,90,0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 4, 0, 6.283); ctx.fill();
+      }
+      if (!document.hidden) requestAnimationFrame(frame);
+    }
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) requestAnimationFrame(frame); });
+    requestAnimationFrame(frame);
   }
 
   /* ---------- 2b. dependency-free fallback (used when GSAP cannot load) ---------- */
@@ -380,7 +471,7 @@
 
   /* ---------- boot ---------- */
   function boot() {
-    initHearts(); initScroll(); initCountdown(); initRSVP(); initShare(); initMusic(); initCalendar();
+    initHearts(); initScroll(); initPremium(); initSparkles(); initCountdown(); initRSVP(); initShare(); initMusic(); initCalendar();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot); else boot();
 })();
